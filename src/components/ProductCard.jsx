@@ -8,7 +8,7 @@ function HomeProductCard({ name, price, image }) {
       <div className="pdtcard__container">
         <div className="pdtcard__info">
           <p className="pdtcard__title">{name}</p>
-          <p className="pdtcard__price">{price}₣</p>
+          <p className="pdtcard__price">{price}&#8355;</p>
           <Button className="pdtcard__button" />
         </div>
         <img className="pdtcard__img" src={image} alt={name} />
