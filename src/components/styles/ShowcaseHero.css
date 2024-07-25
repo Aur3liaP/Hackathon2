@@ -41,6 +41,7 @@
 
       img {
         width: 100%;
+        border-radius: 1rem;
       }
       .showcase__hero__grid__left__price {
         position: absolute;
