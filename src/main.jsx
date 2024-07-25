@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import axios from "axios"
-// import Home from "./pages/Home"
+import Home from "./pages/Home"
 import PageShowcase from "./pages/PageShowcase"
 // import ProductList from "./pages/ProductList"
 // import Basket from "./pages/Basket"
@@ -19,10 +19,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      // {
-      //   path: "/",
-      //   element: <Home />,
-      // },
+      {
+        path: "/",
+        element: <Home />,
+      },
       // {
       //   path: "/product-list",
       //   element: <ProductList />,

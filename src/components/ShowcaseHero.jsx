@@ -4,11 +4,10 @@ import SmileySvg from "./svg/SmileySvg"
 import PrixSvg from "./svg/PrixSvg"
 import RondSoleilSVG from "./svg/RondSoleilSVG"
 import { useMediaQuery } from "react-responsive"
-import { Link, useLoaderData } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { checkPropTypes, PropTypes } from "prop-types"
 
-export default function ShowcaseHero() {
-  const item = useLoaderData()
-
+export default function ShowcaseHero({ item }) {
   const isDesktop = useMediaQuery({
     query: "(min-width: 640px)",
   })
@@ -17,7 +16,7 @@ export default function ShowcaseHero() {
     query: "(max-width: 640px)",
   })
 
-  console.info(item)
+  // console.info(item)
 
   return (
     <section className="showcase__hero__container">
@@ -46,7 +45,8 @@ export default function ShowcaseHero() {
                 </div>
               </div>
               <p className="showcase__hero__grid__right__paragraph">
-                {item.description}
+                {item.description} <br />
+                {item.sales_pitch}
               </p>
               <Link to={"/cart"}>
                 <button className="showcase__hero__grid__right__buy">
@@ -87,7 +87,8 @@ export default function ShowcaseHero() {
                 </div>
               </div>
               <p className="showcase__hero__grid__right__paragraph">
-                {item.description}
+                {item.description} <br />
+                {item.sales_pitch}
               </p>
               <Link to={"/cart"}>
                 <button className="showcase__hero__grid__right__buy">
@@ -105,4 +106,14 @@ export default function ShowcaseHero() {
       )}
     </section>
   )
+}
+
+ShowcaseHero.propTypes = {
+  item: checkPropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    sales_pitch: PropTypes.string.isRequired,
+  }).isRequired,
 }
