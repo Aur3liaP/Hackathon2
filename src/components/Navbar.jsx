@@ -30,9 +30,9 @@ export default function Navbar() {
               <span>CyberMart</span>
             </Link>
             <section className="navbar__left__pages">
-              <Link to="/#Team1">
+              <a href="/#Team1">
                 <span>L&apos;équipe</span>
-              </Link>
+              </a>
               <Link to="/products">
                 <span>Nos Produits</span>
               </Link>
