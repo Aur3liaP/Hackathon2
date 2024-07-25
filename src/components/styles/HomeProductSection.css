@@ -1,0 +1,20 @@
+
+.homePdtSection__background {
+    background-color: pink;
+    height: 500px;
+
+    .homePdtSection__container {
+
+
+        h2 {
+            font-size: 4rem;
+            margin-bottom: 50px;
+            
+        }
+        
+        .homePdtSection__list {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.pdtcard__container{
+    max-height: 192px;
+    max-width: 407px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: black 4px 6px 0px;
+
+    .pdtcard__info{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+
+        .pdtcard__title{
+            font-size: 2rem;
+        }
+
+        .pdtcard__price {
+
+        }
+
+        .pdtcard__button{
+            display: flex;
+            align-items: flex-end;
+
+        }
+
+    }
+
+    .pdtcard__img{
+        border-radius: 10px;
+        max-width: 50%;
+    }
+}
