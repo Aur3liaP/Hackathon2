@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom"
-import "../styles/App.css"
+import HomeTeamCard from "./HomeTeamCard"
+import "./styles/App.css"
 import Navbar from "./Navbar"
+
 
 function App() {
   return (
     <>
       <Outlet />
       <Navbar />
+      <HomeTeamCard/>
     </>
   )
 }
