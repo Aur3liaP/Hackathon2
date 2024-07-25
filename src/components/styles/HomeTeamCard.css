@@ -1,0 +1,100 @@
+.teamCard{
+    background-color: var(--clr-pink);
+    
+    .teamCard__container{
+        width: 90%;
+        max-width: 1440px;
+        margin: 0 auto;
+       
+        
+        .teamCard__title{
+            display: flex;
+            padding: 5vh 0;
+            align-items: center;
+            gap: 9vh;
+
+            @media (width < 640px) {
+                flex-direction: column;
+                gap: 2vh;
+            }
+
+            .teamCard__h2{  
+                font-family: var(--ff-header);
+                font-weight: bold;
+                font-size: 3.25rem;
+
+                @media (width < 640px) {
+                    font-size: 3rem;
+                    text-align: center;
+                }
+            }
+        }
+
+        .teamCard__cardsContainer{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem;
+            justify-content: center;
+            padding-bottom: 5vh;
+
+            @media (width < 1440px) {
+                gap: 1rem;
+            }
+            
+            .teamCard__cards{
+                width: 360px;
+                background-color: white;
+                height: 410px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                border: 1px solid black;
+                border-radius: 0.625rem;
+                box-shadow: 4px 6px black;   
+
+                @media (width < 640px) {
+                    width: 325px;
+                    height: 390px;
+                }
+                
+                
+                .teamCard__cardsImgContainer{
+                    background-color: rgba(170, 169, 169, 0.637);
+                    width: 85%;
+                    height: 260px;
+                    border-radius: 10px;
+                    
+                    @media (width < 640px) {
+                        height: 230px;
+                    } 
+                    
+
+                    .teamCard__cardsImg{
+                        height: 100%;
+                        background-color: grey;
+                        transform: translateX(25%);
+
+                    }
+                    
+                } 
+                .teamCard__cardsTexteContainer{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 1.5vh;
+                    .teamCard__cardsh3{
+                        font-family: var(--ff-header);
+                        font-weight: bold;
+                        font-size: 2rem;
+                        text-align: center;
+                    }    
+                    .teamCard__cardsp{
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
