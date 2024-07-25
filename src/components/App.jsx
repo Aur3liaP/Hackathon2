@@ -1,3 +1,4 @@
+import { ShoppingContextProvider } from "../context/ShoppingContext"
 import { Outlet } from "react-router-dom"
 import "./styles/App.css"
 import Navbar from "./Navbar"
@@ -7,7 +8,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <ShoppingContextProvider>
+        <Outlet />
+      </ShoppingContextProvider>
       <Footer />
     </>
   )

@@ -1,8 +1,11 @@
+import PropTypes from "prop-types"
 import { createContext, useState } from "react"
 
 const defaultShoppingContext = {
   shoppingItems: [],
-  setShoppingItem: () => {},
+  setShoppingItems: () => {},
+  addToCart: () => {},
+  removeFromCart: () => {},
 }
 
 const ShoppingContext = createContext(defaultShoppingContext)
@@ -12,11 +15,23 @@ const ShoppingContextProvider = ({ children }) => {
     defaultShoppingContext.shoppingItems,
   )
 
+  const addToCart = item => setShoppingItems([...shoppingItems, item])
+
+  const removeFromCart = itemToRemove => {
+    setShoppingItems(shoppingItems.filter(item => item !== itemToRemove))
+  }
+
   return (
-    <ShoppingContext.Provider value={{ shoppingItems, setShoppingItems }}>
+    <ShoppingContext.Provider
+      value={{ shoppingItems, addToCart, removeFromCart }}
+    >
       {children}
     </ShoppingContext.Provider>
   )
 }
 
-export default ShoppingContextProvider
+ShoppingContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export { ShoppingContext, ShoppingContextProvider }
