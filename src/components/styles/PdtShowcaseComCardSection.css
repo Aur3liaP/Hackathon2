@@ -1,0 +1,48 @@
+.pdtShowcaseComCardSection__background {
+    background-color: #68ffca;
+    height: 400px;
+
+    .pdtShowcaseComCardSection__container {
+
+        width: 90%;
+        max-width: 1440px;
+        margin: 0 auto;
+        
+
+        .pdtShowcaseComCardSection__title {
+            font-family: "Syne", sans-serif;
+            padding: 5vh 0;
+            font-size: 3.25rem;
+            
+        }
+        
+        .pdtShowcaseComCardSection__list {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .pdtShowcaseComCardSection__background {
+        height: 100%;
+
+        .pdtShowcaseComCardSection__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .pdtShowcaseComCardSection__list {
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+            
+            .pdtShowcaseComCardSection__title {
+                font-size: 3.25rem; 
+            }
+        }
+    }
+}

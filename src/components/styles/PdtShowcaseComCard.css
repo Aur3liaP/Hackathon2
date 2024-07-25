@@ -1,0 +1,29 @@
+.PdtShowcaseComCard__container{
+    max-height: 192px;
+    max-width: 407px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: black 4px 6px 0px;
+
+    .PdtShowcaseComCard__info{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex-grow: 1;
+
+        .PdtShowcaseComCard__title{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+    }
+
+    .PdtShowcaseComCard__img{
+        border-radius: 10px;
+        max-width: 45%;
+    }
+}
