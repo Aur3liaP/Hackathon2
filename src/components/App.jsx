@@ -1,12 +1,13 @@
-import '../styles/App.css'
-import HomeProductSection from './HomeProductSection'
-
+import { Outlet } from "react-router-dom"
+import HomeHero from "./HomeHero"
+import "../styles/App.css"
+import Navbar from "./Navbar"
 
 function App() {
-
   return (
     <>
-     <HomeProductSection/>
+      <Outlet />
+      <Navbar />
     </>
   )
 }
