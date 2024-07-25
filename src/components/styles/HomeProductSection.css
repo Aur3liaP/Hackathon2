@@ -1,6 +1,6 @@
 
 .homePdtSection__background {
-    background-color: pink;
+    background-color: #ffd0e6;
     height: 400px;
 
     .homePdtSection__container {
@@ -11,6 +11,7 @@
         
 
         .homePdtSection__title {
+            font-family: "Syne", sans-serif;
             padding: 5vh 0;
             font-size: 3.25rem;
             
@@ -23,10 +24,9 @@
             
         }
     }
-
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 800px) {
 
     .homePdtSection__background {
         height: 100%;

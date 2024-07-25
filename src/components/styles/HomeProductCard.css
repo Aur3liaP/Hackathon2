@@ -13,26 +13,26 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-
+        flex-grow: 1;
 
         .pdtcard__title{
             font-size: 2rem;
+            font-weight: 600;
         }
 
         .pdtcard__price {
-
+            font-size: 1.5rem;
         }
 
         .pdtcard__button{
-            display: flex;
-            align-items: flex-end;
-
+            margin-top: auto;
+            margin-right: 10px;
         }
 
     }
 
     .pdtcard__img{
         border-radius: 10px;
-        max-width: 50%;
+        max-width: 45%;
     }
 }
