@@ -1,16 +1,14 @@
-import Navbar from "../components/Navbar"
 import HomeHero from "../components/HomeHero"
-import Footer from "../components/Footer"
 import HomeProductSection from "../components/HomeProductSection"
+import HomeTeamCard from "../components/HomeTeamCard"
 
 function Home() {
   return (
-    <>
-      <Navbar />
+    <main>
       <HomeHero />
       <HomeProductSection />
-      <Footer />
-    </>
+      <HomeTeamCard/>
+    </main>
   )
 }
 
