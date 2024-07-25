@@ -5,6 +5,8 @@ import axios from "axios"
 import Home from "./pages/Home"
 // import ProductShowcase from "./pages/ProductShowcase"
 import ProductList from "./pages/ProductList"
+import PageShowcase from "./pages/PageShowcase"
+// import ProductList from "./pages/ProductList"
 // import Basket from "./pages/Basket"
 import "./index.css"
 import App from "./components/App"
@@ -26,13 +28,14 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <ProductList />,
-        loader: () => getData("http://localhost:3310/items")
+        loader: () => getData("http://localhost:3310/items"),
       },
-      // {
-      //   path: "/product-showcase/:id",
-      //   element: <ProductShowcase />,
-      //   loader: ({params}) => getData(`http://localhost:3310/items/${params.id}`)
-      // },
+      {
+        path: "/product-showcase/:id",
+        element: <PageShowcase />,
+        loader: ({ params }) =>
+          getData(`http://localhost:3310/items/${params.id}`),
+      },
       // {
       //   path: "/basket",
       //   element: <Basket />,
