@@ -1,6 +1,7 @@
 .pdtShowcaseComCardSection__background {
     background-color: #68ffca;
-    height: 400px;
+    height: 600px;
+    padding-block: 5vh;
 
     .pdtShowcaseComCardSection__container {
 
@@ -10,7 +11,7 @@
         
 
         .pdtShowcaseComCardSection__title {
-            font-family: "Syne", sans-serif;
+            font-family: var(--ff-header);
             padding: 5vh 0;
             font-size: 3.25rem;
             

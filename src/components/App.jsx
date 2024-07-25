@@ -1,12 +1,16 @@
+import { Outlet } from "react-router-dom"
+import "./styles/App.css"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 
-import "../styles/App.css"
 
-import PdtShowcaseComCardSection from "./PdtShowcaseComCardSection"
 
 function App() {
   return (
     <>
-      <PdtShowcaseComCardSection/>
+      <Navbar />
+      <Outlet />
+      <Footer/>
     </>
   )
 }
