@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 
 export default function BasketLogoSvg({ width = "70", height = "70" }) {
   return (
