@@ -3,12 +3,12 @@
 import "../styles/App.css"
 // import Navbar from "./Navbar"
 // import HomeProductSection from "./HomeProductSection"
-import PageShowcase from "../pages/PageShowcase"
+import { Outlet } from "react-router-dom"
 
 function App() {
   return (
     <div>
-      <PageShowcase />
+      <Outlet />
     </div>
   )
 }

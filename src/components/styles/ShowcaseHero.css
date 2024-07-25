@@ -3,6 +3,9 @@
   width: 90%;
   max-width: 1440px;
 
+  a:-webkit-any-link {
+    text-decoration: none;
+  }
   .showcase__hero__title {
     display: flex;
     border: 3px solid black;
@@ -86,12 +89,16 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
 
+        padding: 0 12%;
+
         .showcase__hero__grid__right__buy__text {
-          padding: 12%;
           text-decoration: underline;
+          font-size: 3rem;
+        }
+        .showcase__hero__grid__right__buy__prix {
           font-size: 3rem;
         }
       }
@@ -195,6 +202,11 @@
             padding: 4%;
             text-decoration: underline;
             font-size: 2rem;
+            margin-right: 2rem;
+          }
+          .showcase__hero__grid__right__buy__prix {
+            font-size: 2rem;
+            margin-left: 2rem;
           }
         }
       }
