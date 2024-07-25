@@ -1,5 +1,5 @@
 import HomeHero from "../components/HomeHero"
-import HomeProductSection from "./HomeProductSection"
+import HomeProductSection from "../components/HomeProductSection"
 import HomeTeamCard from "../components/HomeTeamCard"
 
 function Home() {
