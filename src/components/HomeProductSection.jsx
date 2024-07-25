@@ -19,7 +19,7 @@ function HomeProductSection() {
       <>
       <div className='homePdtSection__background'>
         <div className='homePdtSection__container'>
-          <h2>Nos Produits phares !</h2>
+          <h2 className='homePdtSection__title'>Nos Produits phares !</h2>
           <div className='homePdtSection__list'>
               {products.slice(0, 3).map(product => (
                   <HomeProductCard

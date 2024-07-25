@@ -1,20 +1,49 @@
 
 .homePdtSection__background {
     background-color: pink;
-    height: 500px;
+    height: 400px;
 
     .homePdtSection__container {
 
+        width: 90%;
+        max-width: 1440px;
+        margin: 0 auto;
+        
 
-        h2 {
-            font-size: 4rem;
-            margin-bottom: 50px;
+        .homePdtSection__title {
+            padding: 5vh 0;
+            font-size: 3.25rem;
             
         }
         
         .homePdtSection__list {
             display: flex;
             justify-content: space-around;
+            gap: 20px;
+            
+        }
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+
+    .homePdtSection__background {
+        height: 100%;
+
+        .homePdtSection__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .homePdtSection__list {
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+            
+            .homePdtSection__title {
+                font-size: 3.25rem; 
+            }
         }
     }
 }

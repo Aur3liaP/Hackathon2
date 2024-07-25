@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './styles/HomeProductCard.css'
 
 
@@ -16,5 +17,11 @@ function HomeProductCard({ nom, prix, image }) {
     </>
   );
 }
+
+HomeProductCard.propTypes = {
+    nom: PropTypes.string.isRequired,
+    prix: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+  };
 
 export default HomeProductCard;
