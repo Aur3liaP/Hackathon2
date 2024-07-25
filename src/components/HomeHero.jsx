@@ -2,7 +2,7 @@ import RondSoleilSVG from "./svg/RondSoleilSVG"
 import DoublePlaySVG from "./svg/DoublePlaySVG"
 import SquigglyArrow from "./svg/SquigglyArrow"
 import "./styles/HomeHero.css"
-import minitel from "../assets/minitel2(API).png"
+import minitel from "../assets/minitel2API.png"
 import Button from "./Button"
 
 function HomeHero() {
