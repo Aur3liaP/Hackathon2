@@ -1,36 +1,22 @@
-import { useEffect, useState } from "react";
-import PdtShowcaseComCard from "./PdtShowcaseComCard";
+import { PropTypes } from "prop-types"
+import PdtShowcaseComCard from "./PdtShowcaseComCard"
 import "./styles/PdtShowcaseComCardSection.css"
 
-
-function PdtShowcaseComCardSection() {
-
-    const [comments, setComments] = useState([]);
-
-    useEffect(() => {
-      fetch("http://localhost:3310/items")
-        .then((response) => response.json())
-        .then((data) => {
-          const item = data.find((item) => item.id === 1);
-          if (item) {
-            setComments(item.client_commentary);
-          }
-        })
-        .catch((error) => console.error("Error fetching data:", error));
-    }, []);
-    
+function PdtShowcaseComCardSection({ item }) {
+  console.info(item.client_commentary)
+  const commentsArray = Object.values(item.client_commentary)
   return (
     <>
-    <div className='pdtShowcaseComCardSection__background'>
-        <div className='pdtShowcaseComCardSection__container'>
-          <h2 className='pdtShowcaseComCardSection__title'>Ils en parlent !</h2>
-          <div className='pdtShowcaseComCardSection__list'>
-            {comments.map((comment, index) => (
-                <PdtShowcaseComCard
+      <div className="pdtShowcaseComCardSection__background">
+        <div className="pdtShowcaseComCardSection__container">
+          <h2 className="pdtShowcaseComCardSection__title">Ils en parlent !</h2>
+          <div className="pdtShowcaseComCardSection__list">
+            {commentsArray.map((comment, index) => (
+              <PdtShowcaseComCard
                 key={index}
-                client_name={comment.clientName}
+                client_name={comment.client_name}
                 commentary={comment.commentary}
-                />
+              />
             ))}
           </div>
         </div>
@@ -39,4 +25,15 @@ function PdtShowcaseComCardSection() {
   )
 }
 
-export default PdtShowcaseComCardSection;
+PdtShowcaseComCardSection.propTypes = {
+  item: PropTypes.shape({
+    client_commentary: PropTypes.objectOf(
+      PropTypes.shape({
+        client_name: PropTypes.string.isRequired,
+        commentary: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+  }).isRequired,
+}
+
+export default PdtShowcaseComCardSection
