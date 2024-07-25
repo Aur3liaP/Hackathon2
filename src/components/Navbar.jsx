@@ -48,7 +48,7 @@ export default function Navbar() {
                 <span className="navbar__right__link">PANIER</span>
               </Link>
               <Link to="/cart">
-                <BasketLogoSvg width="40" height="40" />
+                <BasketLogoSvg width="50" height="50" />
               </Link>
             </div>
           </section>
@@ -80,9 +80,9 @@ export default function Navbar() {
             <Link to="/">
               <span>Accueil</span>
             </Link>
-            <Link to="/">
-              <span>L&apos;équipe</span>
-            </Link>
+            <a href="/#Team1">
+                <span>L&apos;équipe</span>
+              </a>
             <Link to="/products">
               <span>Nos Produits</span>
             </Link>

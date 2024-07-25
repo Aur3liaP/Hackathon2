@@ -6,12 +6,13 @@ import Flo from '../assets/Flo.jpg'
 import Jordan from '../assets/jordan.png'
 import Thomas from '../assets/thomas.png'
 import Aurelia from '../assets/aurelia.png'
+import Romain from '../assets/romain.jpg'
 import TeamCard from './TeamCard'
 
 const team = [
     { id: 1, name: "Lorys Lellouche", img: Lorys, description:"P'tit kiffos" },
-    { id: 2, name: "Romain Alastor", img: Lorys, description:"Chacal"  },
-    { id: 3, name: "Thomas Dziurdzi", img: Thomas, description:"Artiste Figma"  },
+    { id: 2, name: "Romain Alastor", img: Romain, description:"Chacal & Œil de faucon"  },
+    { id: 3, name: "Thomas Dziurdzi", img: Thomas, description:"Macron jeunes années"  },
     { id: 4, name: "Jordan Thivault", img: Jordan, description:"Cuir moustache" },
     { id: 5, name: "Aurelia Pic", img: Aurelia, description:"Bichette" },
     { id: 6, name: "Florian Schaessens", img: Flo, description:"Prince des poulets en interim"  },
