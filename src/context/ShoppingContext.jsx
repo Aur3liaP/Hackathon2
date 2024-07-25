@@ -15,7 +15,10 @@ const ShoppingContextProvider = ({ children }) => {
     defaultShoppingContext.shoppingItems,
   )
 
-  const addToCart = item => setShoppingItems([...shoppingItems, item])
+  const addToCart = item => {
+    console.log(item, shoppingItems)
+    setShoppingItems(prevState => [...prevState, item])
+  }
 
   const removeFromCart = itemToRemove => {
     setShoppingItems(shoppingItems.filter(item => item !== itemToRemove))

@@ -24,6 +24,7 @@ function HomeProductSection() {
                 name={product.name}
                 price={product.price}
                 image={product.image}
+                id={product.id}
               />
             ))}
           </div>
