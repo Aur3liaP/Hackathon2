@@ -1,6 +1,6 @@
-import PropTypes from "react"
+import PropTypes from 'prop-types';
 
-export default function HomeLogoSvg({ width, height }) {
+export default function HomeLogoSvg({ width = "124", height = "124" }) {
   return (
     <svg
       width={width}
