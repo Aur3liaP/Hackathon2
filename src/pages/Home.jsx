@@ -7,7 +7,7 @@ function Home() {
     <main>
       <HomeHero />
       <HomeProductSection />
-      <HomeTeamCard/>
+      <HomeTeamCard />
     </main>
   )
 }
