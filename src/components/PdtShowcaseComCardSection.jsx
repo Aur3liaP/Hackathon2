@@ -28,7 +28,7 @@ function PdtShowcaseComCardSection() {
             {comments.map((comment, index) => (
                 <PdtShowcaseComCard
                 key={index}
-                client_name={comment.client_name}
+                client_name={comment.clientName}
                 commentary={comment.commentary}
                 />
             ))}
