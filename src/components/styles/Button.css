@@ -1,8 +1,8 @@
 .Button {
-    background-color: var(--clr-orange);
-    border: 1px solid black;
-    padding: 0.25em 1.5em;
-    font-size: 1.25rem;
-    border-radius: 0.625rem;
-    box-shadow: 4px 6px black;
-  }
+  background-color: var(--clr-orange);
+  border: 1px solid black;
+  padding: 0.25em 1.5em;
+  font-size: 1.25rem;
+  border-radius: 0.625rem;
+  box-shadow: 4px 6px black;
+}
