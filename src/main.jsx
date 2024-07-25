@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Home from "./pages/Home"
 // import ProductShowcase from "./pages/ProductShowcase"
 // import ProductList from "./pages/ProductList"
-// import Basket from "./pages/Basket"
+import Cart from "./pages/Cart"
 import "./index.css"
 import App from "./components/App"
 
@@ -33,10 +33,10 @@ const router = createBrowserRouter([
       //   element: <ProductShowcase />,
       //   loader: ({params}) => getData(`http://localhost:3310/items/${params.id}`)
       // },
-      // {
-      //   path: "/basket",
-      //   element: <Basket />,
-      // },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
     ],
   },
 ])
