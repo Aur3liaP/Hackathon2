@@ -6,7 +6,6 @@ function Home() {
   return (
     <main>
       <HomeHero />
-      <Footer />
       <HomeProductSection />
       <HomeTeamCard />
     </main>
