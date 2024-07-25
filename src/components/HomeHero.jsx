@@ -12,14 +12,14 @@ function HomeHero() {
         <div className="homehero__text-container">
           <h1 className="homehero__title">Découvrez le Minitel</h1>
           <p className="homehero__paragraphe">
-            Transformez votre manière de communiquer et d'accéder à
-            l'information avec le Minitel, l'innovation technologique française
-            qui change la donne. Imaginez un monde où vous pouvez accéder
-            instantanément à une multitude de services depuis le confort de
-            votre domicile.
+            Transformez votre manière de communiquer et d&apos;accéder à
+            l&apos;information avec le Minitel, l&apos;innovation technologique
+            française qui change la donne. Imaginez un monde où vous pouvez
+            accéder instantanément à une multitude de services depuis le confort
+            de votre domicile.
           </p>
           <p className="homehero__paragraphe">
-            Avec le Minitel, c'est désormais possible !
+            Avec le Minitel, c&apos;est désormais possible !
           </p>
         </div>
         <div className="homehero__image-container">
@@ -29,7 +29,7 @@ function HomeHero() {
         </div>
       </div>
       <div className="homehero__button-container">
-        <Button className="homehero__button" />
+        <Button text="J'achète !" className="homehero__button" />
         <SquigglyArrow className="homehero__arrow-SVG" />
       </div>
     </section>

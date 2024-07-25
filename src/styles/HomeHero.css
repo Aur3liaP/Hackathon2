@@ -1,10 +1,9 @@
 .homehero {
-  outline: 1px solid red;
   padding-block: 5vh;
   width: 90%;
   max-width: 1440px;
   margin: 0 auto;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
 
   .homehero__container {
     margin-inline: 6rem;
@@ -26,8 +25,9 @@
   }
 
   .homehero__paragraphe {
+    font-size: 1.25rem;
     max-width: 60%;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
 
   .homehero__image-container {
@@ -59,7 +59,6 @@
 
   .homehero__button-container {
     position: relative;
-    outline: 1px solid green;
   }
 
   .homehero__button {
@@ -70,5 +69,71 @@
     position: absolute;
     bottom: 50;
     left: 50;
+    transform: translateX(-50%) translateY(50%);
+  }
+
+  @media (max-width: 640px) {
+    & {
+      width: calc(100vw - 5px);
+    }
+
+    .homehero__container {
+      margin-inline: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .homehero__text-container {
+      width: 80%;
+      max-width: 100%;
+    }
+
+    .homehero__paragraphe {
+      max-width: 100%;
+
+      &:last-child {
+        margin-bottom: 5rem;
+      }
+    }
+
+    .homehero__title {
+      font-size: 3rem;
+    }
+
+    .homehero__image-container {
+      max-width: 50%;
+      margin-bottom: 5rem;
+    }
+
+    .homehero__image {
+      max-width: 100%;
+      transform: translateX(-10%);
+    }
+
+    .homehero__sun-SVG {
+      max-width: 50%;
+    }
+
+    .homehero__double-playSVG {
+      max-width: 25%;
+      transform: translateX(-2rem) translateY(2rem);
+    }
+
+    .homehero__button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .homehero__button {
+      text-align: center;
+      width: 80%;
+      margin: 0;
+    }
+
+    .homehero__arrow-SVG {
+      display: none;
+    }
   }
 }

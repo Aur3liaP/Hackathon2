@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 function RondSoleilSVG({ width = "136", height = "136", className }) {
   return (
     <svg
@@ -13,8 +15,8 @@ function RondSoleilSVG({ width = "136", height = "136", className }) {
         cy="67.5977"
         r="39.2067"
         stroke="black"
-        stroke-width="2.70391"
-        stroke-dasharray="5.41 5.41"
+        strokeWidth="2.70391"
+        strokeDasharray="5.41 5.41"
       />
       <circle
         cx="67.5977"
@@ -22,10 +24,16 @@ function RondSoleilSVG({ width = "136", height = "136", className }) {
         r="18.9274"
         fill="#FFC700"
         stroke="black"
-        stroke-width="2.70391"
+        strokeWidth="2.70391"
       />
     </svg>
   )
+}
+
+RondSoleilSVG.propTypes = {
+  width: PropTypes.string,
+  height: PropTypes.string,
+  className: PropTypes.string,
 }
 
 export default RondSoleilSVG

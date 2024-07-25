@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 function SquigglyArrow({ width = "93", height = "93", className }) {
   return (
     <svg
@@ -14,6 +16,12 @@ function SquigglyArrow({ width = "93", height = "93", className }) {
       />
     </svg>
   )
+}
+
+SquigglyArrow.propTypes = {
+  width: PropTypes.string,
+  height: PropTypes.string,
+  className: PropTypes.string,
 }
 
 export default SquigglyArrow
