@@ -48,7 +48,7 @@ export default function Navbar() {
                 <span className="navbar__right__link">PANIER</span>
               </Link>
               <Link to="/cart">
-                <BasketLogoSvg width="50" height="50" />
+                <BasketLogoSvg width="40" height="40" />
               </Link>
             </div>
           </section>
