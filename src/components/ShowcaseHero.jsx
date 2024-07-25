@@ -5,7 +5,7 @@ import PrixSvg from "./svg/PrixSvg"
 import RondSoleilSVG from "./svg/RondSoleilSVG"
 import { useMediaQuery } from "react-responsive"
 import { Link } from "react-router-dom"
-import { checkPropTypes, PropTypes } from "prop-types"
+import { PropTypes } from "prop-types"
 
 export default function ShowcaseHero({ item }) {
   const isDesktop = useMediaQuery({
@@ -109,7 +109,7 @@ export default function ShowcaseHero({ item }) {
 }
 
 ShowcaseHero.propTypes = {
-  item: checkPropTypes.shape({
+  item: PropTypes.shape({
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,

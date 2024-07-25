@@ -1,4 +1,4 @@
-import { checkPropTypes, PropTypes } from "prop-types"
+import { PropTypes } from "prop-types"
 import PdtShowcaseComCard from "./PdtShowcaseComCard"
 import "./styles/PdtShowcaseComCardSection.css"
 
@@ -26,7 +26,7 @@ function PdtShowcaseComCardSection({ item }) {
 }
 
 PdtShowcaseComCardSection.propTypes = {
-  item: checkPropTypes.shape({
+  item: PropTypes.shape({
     client_commentary: PropTypes.objectOf(
       PropTypes.shape({
         client_name: PropTypes.string.isRequired,
