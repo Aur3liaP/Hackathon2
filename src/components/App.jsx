@@ -1,12 +1,10 @@
-import '../styles/App.css'
-import ProductCard from './ProductCard'
-
+import { Outlet } from "react-router-dom"
+import "../styles/App.css"
 
 function App() {
-
   return (
     <>
-     <ProductCard />
+      <Outlet />
     </>
   )
 }

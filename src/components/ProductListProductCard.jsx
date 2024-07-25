@@ -1,7 +1,7 @@
-import "./styles/ProductCard.css"
+import "./styles/ProductListProductCard.css"
 import Button from "./Button";
 import TV from "../assets/tv(API).png"
-function ProductCard() {
+function ProductListProductCard() {
   return (
     <div className="card__container">
       <div className="card">
@@ -20,4 +20,4 @@ function ProductCard() {
   )
 }
 
-export default ProductCard
+export default ProductListProductCard
