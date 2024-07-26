@@ -32,3 +32,16 @@
         max-width: 40%;
     }
 }
+
+@media only screen and (max-width: 800px) {
+    .PdtShowcaseComCard__container{
+        .PdtShowcaseComCard__info{
+            .PdtShowcaseComCard__com{
+                font-size: 1.5rem;
+            }
+        }
+        .PdtShowcaseComCard__img{
+            max-width: 35%;
+        }
+    }
+}
