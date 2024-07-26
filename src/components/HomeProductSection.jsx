@@ -14,7 +14,7 @@ function HomeProductSection() {
       .catch(error => console.error("Error fetching data:", error))
   }, [])
 
-  const handleCardClick = (id) => {
+  const handleCardClick = id => {
     window.scrollTo(0, 0)
     navigate(`/product-showcase/${id}`)
   }

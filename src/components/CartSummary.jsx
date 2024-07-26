@@ -1,18 +1,36 @@
+import PropTypes from "prop-types"
 import RondSoleilSVG from "./svg/RondSoleilSVG"
 import "./styles/CartSummary.css"
-import { useState } from "react";
+import { useEffect, useState } from "react"
+
+function CartSummary({ items, quantities }) {
+  const [cost, setCost] = useState(0)
+  const [TVA, setTVA] = useState(0)
+  const [discount, setDiscount] = useState("")
 
 
-function CartSummary() {
+  useEffect(() => {
+    const calculateCost = (items, quantities) => {
+      if (!items) {
+        return 0
+      } else {
+        const result = items.reduce((acc, item) => {
+          const quantity = quantities[item.id] || 1
+          return acc + item.price * quantity
+        }, 0)
+        return result
+      }
+    }
+    setCost(calculateCost(items, quantities))
+  }, [items, quantities])
 
-    const [code, setCode] = useState('');
+  useEffect(() => {
+    const calculateTVA = price => (price * 20) / 100
+    setTVA(calculateTVA(cost))
+  }, [cost])
 
-    const handleChange = (event) => {
-          setCode(event.target.value);
-      };
-
-    return (
-      <section className="cartSummary__container">
+  return (
+    <section className="cartSummary__container">
         <RondSoleilSVG className="homehero__sun-SVG" />
 
         <div className="cartSummary">
@@ -22,17 +40,18 @@ function CartSummary() {
                     <hr className="cartSummary__hr"/> 
                         <div className="cartSummary__price">
                             <span className="cartSummary__span">Sous-total</span>
-                            <p className="cartSummary__p">899 F</p>
+                            <p className="cartSummary__p">{cost} F</p>
                         </div>
                         <hr className="cartSummary__hr"/> 
                         <div className="cartSummary__price">
                             <span className="cartSummary__span">T.V.A</span>
-                            <p className="cartSummary__p">19 F</p>
+                            <p className="cartSummary__p">{TVA} F</p>
                         </div>
                     <hr className="cartSummary__hr"/> 
                         <div className="cartSummary__code">
                             <p className="cartSummary__p"> Code Promo</p>
-                            <input id="code" type="text" value={code} onChange={handleChange} placeholder="Entrer le code"/>
+                            <input id="code" type="text" value={discount}
+                  onChange={() => setDiscount(event.target.value)} placeholder="Entrer le code"/>
 
                     </div>
                 </div>
@@ -42,7 +61,7 @@ function CartSummary() {
                 <hr className="cartSummary__hr"/> 
                     <div className="cartSummary__total">
                         <h2 className="cartSummary__h2">Total</h2>
-                        <p className="cartSummary__p">899 F</p>
+                        <p className="cartSummary__p">{cost + TVA - discount} F</p>
                     </div>
                 </div>
             </div>
@@ -51,7 +70,17 @@ function CartSummary() {
             </div>
         </div>
       </section>
-    )
-  }
-  
-  export default CartSummary
+  )
+}
+
+CartSummary.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+  quantities: PropTypes.objectOf(PropTypes.number).isRequired,
+}
+
+export default CartSummary
