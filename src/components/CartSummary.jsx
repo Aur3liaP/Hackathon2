@@ -5,6 +5,8 @@ import { useEffect, useState } from "react"
 
 function CartSummary({ items, quantities }) {
   const [cost, setCost] = useState(0)
+  const [TVA, setTVA] = useState(0)
+  const [discount, setDiscount] = useState(0)
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 900px)",
   })
@@ -27,6 +29,11 @@ function CartSummary({ items, quantities }) {
     setCost(calculateCost(items, quantities))
   }, [items, quantities])
 
+  useEffect(() => {
+    const calculateTVA = price => (price * 20) / 100
+    setTVA(calculateTVA(cost))
+  }, [cost])
+
   return (
     <section className="cartSummary__container">
       <RondSoleilSVG className="homehero__sun-SVG" />
@@ -43,7 +50,7 @@ function CartSummary({ items, quantities }) {
               <hr className="cartSummary__hr" />
               <div className="cartSummary__price">
                 <span className="cartSummary__span">T.V.A</span>
-                <p className="cartSummary__p">19 F</p>
+                <p className="cartSummary__p">{TVA} F</p>
               </div>
               <hr className="cartSummary__hr" />
               <div className="cartSummary__code">
@@ -56,7 +63,7 @@ function CartSummary({ items, quantities }) {
               <hr className="cartSummary__hr" />
               <div className="cartSummary__total">
                 <h2 className="cartSummary__h2">Total</h2>
-                <p className="cartSummary__p">899 F</p>
+                <p className="cartSummary__p">{cost + TVA - discount} F</p>
               </div>
             </div>
           </div>

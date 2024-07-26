@@ -39,6 +39,7 @@ function Cart() {
         {filteredItems.map(item => (
           <BasktetProductCard
             key={item.id}
+            id={item.id}
             productTitle={item.name}
             productPrice={item.price}
             productImage={item.image}

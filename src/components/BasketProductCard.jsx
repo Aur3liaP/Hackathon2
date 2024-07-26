@@ -1,9 +1,10 @@
 import PropTypes from "prop-types"
 import "./styles/BasketProductCard.css"
-import minitel from "../assets/minitel2API.png"
+import { ShoppingContext } from "../context/ShoppingContext"
 import MinusSVG from "./svg/MinusSVG"
 import PlusSVG from "./svg/PlusSVG"
 import DeleteSVG from "./svg/DeleteSVG"
+import { useContext } from "react"
 
 function BasktetProductCard({
   productTitle = "L'ordinateur",
@@ -11,16 +12,21 @@ function BasktetProductCard({
   productImage,
   quantity,
   setQuantity,
+  id,
 }) {
+  const { removeFromCart } = useContext(ShoppingContext)
   const handleIncrease = () => setQuantity(quantity + 1)
 
   const handleDecrease = () => {
-    setQuantity(quantity > 0 ? quantity - 1 : 0)
+    setQuantity(quantity > 1 ? quantity - 1 : 1)
   }
 
   return (
     <div className="basket-product-card">
-      <DeleteSVG className="basket-product-card__delete-icon basket-product-card__button" />
+      <DeleteSVG
+        className="basket-product-card__delete-icon basket-product-card__button"
+        onClick={() => removeFromCart(id)}
+      />
       <div className="basket-product-card__container">
         <img src={productImage} alt="" className="basket-product-card__image" />
         <div className="basket-product-card__text-container">
