@@ -8,11 +8,10 @@ function App() {
   return (
     <>
       <UserContextProvider>
-        {/* <Navbar /> */}
-      <ShoppingContextProvider>
-        <Outlet />
+        <ShoppingContextProvider>
+          <Outlet />
+        </ShoppingContextProvider>
       </UserContextProvider>
-      </ShoppingContextProvider>
       <Footer />
     </>
   )
