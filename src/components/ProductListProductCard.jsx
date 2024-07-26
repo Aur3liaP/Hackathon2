@@ -1,7 +1,7 @@
 import "./styles/ProductListProductCard.css"
-import Button from "./Button";
+import Button from "./Button"
 
-function ProductListProductCard({item}) {
+function ProductListProductCard({ item }) {
   return (
     <div className="card__container">
       <div className="card">
@@ -10,10 +10,10 @@ function ProductListProductCard({item}) {
         </div>
         <div className="card__infos">
           <div className="card__text">
-            <p className="card__article">{item.nom}</p>
-            <p className="card__price">{item.prix} F</p>
+            <p className="card__article">{item.name}</p>
+            <p className="card__price">{item.price} F</p>
           </div>
-          <Button text="Acheter !" className={"button"}/>
+          <Button text="Acheter !" className={"button"} />
         </div>
       </div>
     </div>
