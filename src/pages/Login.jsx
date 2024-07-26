@@ -12,7 +12,7 @@ function Login () {
       <form>
         <input placeholder="Username" type="text" required />
         <input placeholder="Password" type="password" required />
-        <button type="button">LOG IN</button>
+        <button className='butlog' type="button">LOG IN</button>
       </form>
     </div>
     </div>
