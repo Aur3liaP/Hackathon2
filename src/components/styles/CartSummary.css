@@ -68,7 +68,7 @@
             font-weight: bold;
 
             @media (width < 640px) {
-                font-size: 1rem;
+                font-size: 0.8rem;
             
             }
         }
@@ -117,7 +117,7 @@
                 font-weight: bold;
 
                 @media (width < 640px) {
-                    font-size: 1rem;
+                    font-size: 0.9rem;
                 }
             }
 
@@ -135,7 +135,7 @@
         .cartSummary__totaltext{
             @media (width < 640px) {
                 flex-direction: column;
-                padding-right: 2rem;
+                padding-right: 1.8rem;
             }
 
             .cartSummary__total{
@@ -157,7 +157,7 @@
                 
                     p{
                         font-weight: 500;
-                        font-size: 1.75rem;
+                        font-size: 1.5rem;
                   
                     }
                 }
@@ -180,17 +180,4 @@
         }
 
     }
-}
-
-/* Mobile Version  */
-
-.cartSummary__mobile{
-    .cartSummary__text__mobile{
-
-        .cartSummary__prices__mobile{
-
-        }
-    }
-
-
 }
