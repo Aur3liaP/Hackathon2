@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import HomeProductCard from "./ProductCard"
 import "./styles/HomeProductSection.css"
 
 function HomeProductSection() {
   const [products, setProducts] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:3310/items")
@@ -11,6 +13,11 @@ function HomeProductSection() {
       .then(data => setProducts(data))
       .catch(error => console.error("Error fetching data:", error))
   }, [])
+
+  const handleCardClick = (id) => {
+    window.scrollTo(0, 0)
+    navigate(`/product-showcase/${id}`)
+  }
 
   return (
     <>
@@ -24,6 +31,7 @@ function HomeProductSection() {
                 name={product.name}
                 price={product.price}
                 image={product.image}
+                onClick={() => handleCardClick(product.id)}
               />
             ))}
           </div>
