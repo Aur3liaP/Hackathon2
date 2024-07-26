@@ -10,6 +10,7 @@ import PageShowcase from "./pages/PageShowcase"
 import Cart from "./pages/Cart"
 import "./index.css"
 import App from "./components/App"
+import Login from "./pages/Login"
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
         loader: () => getData("http://localhost:3310/items"),
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
