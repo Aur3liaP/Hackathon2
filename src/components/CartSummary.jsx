@@ -3,7 +3,7 @@ import "./styles/CartSummary.css"
 import { useMediaQuery } from "react-responsive"
 import { useEffect, useState } from "react"
 
-function CartSummary({ items, quantity }) {
+function CartSummary({ items, quantities }) {
   const [cost, setCost] = useState(0)
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 900px)",
@@ -13,22 +13,22 @@ function CartSummary({ items, quantity }) {
   })
 
   useEffect(() => {
-    console.log("items:", items)
-    const calculateCost = items => {
+    const calculateCost = (items, quantities) => {
       if (!items) {
         return 0
       } else {
-        const result = items.reduce((acc, item) => acc + item.price, 0)
+        const result = items.reduce((acc, item) => {
+          const quantity = quantities[item.id] || 1
+          return acc + item.price * quantity
+        }, 0)
         return result
       }
     }
-    setCost(calculateCost(items))
-    console.log(calculateCost(items))
-  }, [])
+    setCost(calculateCost(items, quantities))
+  }, [items, quantities])
 
   return (
     <section className="cartSummary__container">
-      {console.log(cost)}
       <RondSoleilSVG className="homehero__sun-SVG" />
       {isDesktopOrLaptop && (
         <div className="cartSummary">

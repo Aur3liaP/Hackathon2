@@ -1,4 +1,3 @@
-import { useState } from "react"
 import PropTypes from "prop-types"
 import "./styles/BasketProductCard.css"
 import minitel from "../assets/minitel2API.png"
@@ -10,13 +9,13 @@ function BasktetProductCard({
   productTitle = "L'ordinateur",
   productPrice = 899,
   productImage,
-  quantity = { quantity },
-  setQuantity = { setQuantity },
+  quantity,
+  setQuantity,
 }) {
-  const handleIncrease = () => setQuantity(prevQuantity => prevQuantity + 1)
+  const handleIncrease = () => setQuantity(quantity + 1)
 
   const handleDecrease = () => {
-    setQuantity(prevQuantity => (prevQuantity > 0 ? prevQuantity - 1 : 0))
+    setQuantity(quantity > 0 ? quantity - 1 : 0)
   }
 
   return (
@@ -53,6 +52,9 @@ function BasktetProductCard({
 BasktetProductCard.propTypes = {
   productTitle: PropTypes.string,
   productPrice: PropTypes.number,
+  productImage: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
+  setQuantity: PropTypes.func.isRequired,
 }
 
 export default BasktetProductCard

@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar"
 import { ShoppingContext } from "../context/ShoppingContext"
 
 function Cart() {
-  const [quantity, setQuantity] = useState(1)
+  const [quantities, setQuantities] = useState({})
   const [isLoaded, setIsLoaded] = useState(false)
   const [filteredItems, setFilteredItems] = useState([])
 
@@ -18,8 +18,19 @@ function Cart() {
     const filteredItems = items.filter(item => shoppingItems.includes(item.id))
     setFilteredItems(filteredItems)
     setIsLoaded(true)
-    return
-  }, [])
+    const initialQuantities = filteredItems.reduce((acc, item) => {
+      acc[item.id] = 1
+      return acc
+    }, {})
+    setQuantities(initialQuantities)
+  }, [items, shoppingItems])
+
+  const updateQuantity = (itemId, newQuantity) => {
+    setQuantities(prevQuantities => ({
+      ...prevQuantities,
+      [itemId]: newQuantity,
+    }))
+  }
 
   return (
     <main className="cart">
@@ -31,12 +42,12 @@ function Cart() {
             productTitle={item.name}
             productPrice={item.price}
             productImage={item.image}
-            quantity={quantity}
-            setQuantity={setQuantity}
+            quantity={quantities[item.id]}
+            setQuantity={newQuantity => updateQuantity(item.id, newQuantity)}
           />
         ))}
         {isLoaded ? (
-          <CartSummary items={filteredItems} quantity={quantity} />
+          <CartSummary items={filteredItems} quantities={quantities} />
         ) : (
           <p>loading</p>
         )}
