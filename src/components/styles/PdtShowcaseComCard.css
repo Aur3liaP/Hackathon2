@@ -29,7 +29,9 @@
     }
 
     .PdtShowcaseComCard__img{
-        max-width: 40%;
+        width: 10vw; 
+        aspect-ratio: 1 / 1; 
+        object-fit: cover; 
     }
 }
 
@@ -41,7 +43,7 @@
             }
         }
         .PdtShowcaseComCard__img{
-            max-width: 35%;
+            width: 80px;
         }
     }
 }

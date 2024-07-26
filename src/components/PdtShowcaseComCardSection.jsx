@@ -11,9 +11,9 @@ function PdtShowcaseComCardSection({ item }) {
         <div className="pdtShowcaseComCardSection__container">
           <h2 className="pdtShowcaseComCardSection__title">Ils en parlent !</h2>
           <div className="pdtShowcaseComCardSection__list">
-            {commentsArray.map((comment, index) => (
+            {commentsArray.map((comment, client_name) => (
               <PdtShowcaseComCard
-                key={index}
+                key={client_name}
                 client_name={comment.client_name}
                 commentary={comment.commentary}
               />
