@@ -10,6 +10,7 @@ import PageShowcase from "./pages/PageShowcase"
 import Cart from "./pages/Cart"
 import "./index.css"
 import App from "./components/App"
+import Login from "./pages/Login"
 
 const getData = async uri => {
   const result = await axios.get(uri)
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
