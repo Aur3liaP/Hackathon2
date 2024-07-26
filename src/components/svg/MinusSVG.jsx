@@ -1,13 +1,13 @@
 import PropTypes from "prop-types"
 
-function RemoveSVG({ width = "43", height = "45", className, onClick }) {
+function RemoveSVG({ width = "45", height = "45", className, onClick }) {
   return (
     <svg
       onClick={onClick}
       className={className}
       width={width}
       height={height}
-      viewBox="0 0 43 45"
+      viewBox="0 0 45 45"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

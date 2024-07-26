@@ -7,6 +7,7 @@ import Jordan from '../assets/jordan.png'
 import Thomas from '../assets/thomas.png'
 import Aurelia from '../assets/aurelia.png'
 import Romain from '../assets/romain.jpg'
+import Abdou from '../assets/abdoupunk.jpg'
 import TeamCard from './TeamCard'
 
 const team = [
@@ -16,6 +17,7 @@ const team = [
     { id: 4, name: "Jordan Thivault", img: Jordan, description:"Cuir moustache" },
     { id: 5, name: "Aurelia Pic", img: Aurelia, description:"Bichette" },
     { id: 6, name: "Florian Schaessens", img: Flo, description:"Prince des poulets en interim"  },
+    { id: 6, name: "Abdou", img: Abdou, description:"Chicken Lord"  },
   ];
 
 function HomeTeamCard() {

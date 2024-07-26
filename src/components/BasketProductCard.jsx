@@ -1,6 +1,6 @@
 import { useState } from "react"
 import PropTypes from "prop-types"
-import "./ BasketProductCard.css"
+import "./styles/BasketProductCard.css"
 import minitel from "../assets/minitel2API.png"
 import MinusSVG from "./svg/MinusSVG"
 import PlusSVG from "./svg/PlusSVG"
@@ -20,26 +20,28 @@ function BasktetProductCard({
 
   return (
     <div className="basket-product-card">
-      <DeleteSVG className="basket-product-card__delete-icon" />
+      <DeleteSVG className="basket-product-card__delete-icon basket-product-card__button" />
       <div className="basket-product-card__container">
         <img src={minitel} alt="" className="basket-product-card__image" />
         <div className="basket-product-card__text-container">
           <span className="basket-product-card__product-title">
             {productTitle}
           </span>
-          <div className="basket-product-card__quantity-container">
-            <MinusSVG
-              className="basket-product-card__minus-icon"
-              width="20px"
-              onClick={handleDecrease}
-            />
-            <span className="basket-product-card__quantity">{quantity}</span>
-            <PlusSVG
-              onClick={handleIncrease}
-              className="basket-product-card__plus-icon"
-              width="20px"
-            />
-            <span className="basket-product-card__price">{productPrice}ff</span>
+          <div className="basket-product-card__price-container">
+            <div className="basket-product-card__quantity-container">
+              <MinusSVG
+                className="basket-product-card__minus-icon basket-product-card__button"
+                width="28px"
+                onClick={handleDecrease}
+              />
+              <span className="basket-product-card__quantity">{quantity}</span>
+              <PlusSVG
+                onClick={handleIncrease}
+                className="basket-product-card__plus-icon basket-product-card__button"
+                width="28px"
+              />
+            </div>
+            <span className="basket-product-card__price">{productPrice} F</span>
           </div>
         </div>
       </div>
