@@ -79,6 +79,10 @@
         font-size: 1.85rem;
         height: 65%;
         line-height: 2.5rem;
+
+        @media (width <= 1440px) {
+          font-size: 1.55rem;
+      } 
       }
 
       .showcase__hero__grid__right__buy {

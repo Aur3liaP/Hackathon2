@@ -35,5 +35,5 @@ export default function PrixSvg({ width = "222", height = "222", price }) {
 PrixSvg.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
 }

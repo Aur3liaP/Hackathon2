@@ -27,13 +27,11 @@ function PdtShowcaseComCardSection({ item }) {
 
 PdtShowcaseComCardSection.propTypes = {
   item: PropTypes.shape({
-    client_commentary: PropTypes.objectOf(
-      PropTypes.shape({
-        client_name: PropTypes.string.isRequired,
-        commentary: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
+      client_commentary: PropTypes.oneOfType([
+          PropTypes.object,
+          PropTypes.array
+      ]).isRequired,
   }).isRequired,
-}
+};
 
 export default PdtShowcaseComCardSection
