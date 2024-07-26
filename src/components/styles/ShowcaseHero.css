@@ -102,6 +102,7 @@
         .showcase__hero__grid__right__buy__text {
           text-decoration: underline;
           font-size: 3rem;
+          cursor: pointer;
         }
         .showcase__hero__grid__right__buy__prix {
           font-size: 3rem;
