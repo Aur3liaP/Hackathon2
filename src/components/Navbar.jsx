@@ -36,8 +36,8 @@ export default function Navbar() {
               <Link to="/products">
                 <span>Nos Produits</span>
               </Link>
-              <Link to="/cart">
-                <span>Panier</span>
+              <Link to="/login">
+                <span>Se Connecter</span>
               </Link>
             </section>
           </section>
@@ -85,6 +85,9 @@ export default function Navbar() {
               </a>
             <Link to="/products">
               <span>Nos Produits</span>
+            </Link>
+            <Link to="/login">
+              <span>Se Connecter</span>
             </Link>
             <Link to="/cart">
               <span>Panier</span>
