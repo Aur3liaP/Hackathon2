@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 import "./styles/ProductListProductCard.css"
 import Button from "./Button"
 
@@ -23,11 +23,13 @@ function ProductListProductCard({ item, onClick }) {
 
 ProductListProductCard.propTypes = {
   item: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
-  }).isRequired,
-  onClick: PropTypes.func.isRequired,
-};
+    name: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]).isRequired
+  }).isRequired
+}
 
 export default ProductListProductCard
