@@ -7,7 +7,7 @@ import Home from "./pages/Home"
 import ProductList from "./pages/ProductList"
 import PageShowcase from "./pages/PageShowcase"
 // import ProductList from "./pages/ProductList"
-// import Basket from "./pages/Basket"
+import Cart from "./pages/Cart"
 import "./index.css"
 import App from "./components/App"
 
@@ -36,10 +36,10 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           getData(`http://localhost:3310/items/${params.id}`),
       },
-      // {
-      //   path: "/basket",
-      //   element: <Basket />,
-      // },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
     ],
   },
 ])
