@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 
-function DeleteSVG({ width = "40", height = "41", className, onClick }) {
+function DeleteSVG({ width = "50", height = "51", className, onClick }) {
   return (
     <svg
       onClick={onClick}

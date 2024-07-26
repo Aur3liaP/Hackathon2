@@ -1,13 +1,13 @@
 import PropTypes from "prop-types"
 
-function PlusSVG({ width = "47", height = "44", className, onClick }) {
+function PlusSVG({ width = "45", height = "45", className, onClick }) {
   return (
     <svg
       onClick={onClick}
       className={className}
       width={width}
       height={height}
-      viewBox="0 0 47 44"
+      viewBox="0 0 45 45"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

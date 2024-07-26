@@ -3,9 +3,11 @@ import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import axios from "axios"
 import Home from "./pages/Home"
+// import ProductShowcase from "./pages/ProductShowcase"
+import ProductList from "./pages/ProductList"
 import PageShowcase from "./pages/PageShowcase"
 // import ProductList from "./pages/ProductList"
-// import Basket from "./pages/Basket"
+import Cart from "./pages/Cart"
 import "./index.css"
 import App from "./components/App"
 
@@ -23,21 +25,21 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      // {
-      //   path: "/product-list",
-      //   element: <ProductList />,
-      //   loader: () => getData("http://localhost:3310/items")
-      // },
+      {
+        path: "/products",
+        element: <ProductList />,
+        loader: () => getData("http://localhost:3310/items"),
+      },
       {
         path: "/product-showcase/:id",
         element: <PageShowcase />,
         loader: ({ params }) =>
           getData(`http://localhost:3310/items/${params.id}`),
       },
-      // {
-      //   path: "/basket",
-      //   element: <Basket />,
-      // },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
     ],
   },
 ])

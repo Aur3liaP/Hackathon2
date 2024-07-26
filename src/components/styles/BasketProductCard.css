@@ -12,21 +12,40 @@
 
   .basket-product-card__delete-icon {
     align-self: flex-end;
-    height: 15px;
+    height: 25px;
   }
 
   .basket-product-card__container {
     display: flex;
     align-items: center;
     gap: 4rem;
+
+    @media (max-width: 640px) {
+      gap: 2rem
+    }
+  }
+
+  .basket-product-card__button{
+    cursor: pointer;
   }
 
   .basket-product-card__image {
     max-width: 100px;
   }
 
+  .basket-product-card__text-container{
+    width: 45%;
+  }
+
   .basket-product-card__product-title {
     font-size: 1.5rem;
+  }
+
+  .basket-product-card__price-container{
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+
   }
 
   .basket-product-card__quantity {
