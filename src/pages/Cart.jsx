@@ -37,6 +37,7 @@ function Cart() {
     <main className="cart">
       <Navbar />
       <div className="cart_container">
+        <div className="cart_productContainer">
         {filteredItems.map(item => (
           <BasktetProductCard
             key={item.id}
@@ -48,6 +49,7 @@ function Cart() {
             setQuantity={newQuantity => updateQuantity(item.id, newQuantity)}
           />
         ))}
+        </div>
         {isLoaded ? (
           <CartSummary items={filteredItems} quantities={quantities} />
         ) : (
