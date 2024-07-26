@@ -25,8 +25,13 @@
     }
   }
 
-  .basket-product-card__button{
+  .basket-product-card__button {
     cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .basket-product-card__button:active {
+      transform: scale(0.90);
   }
 
   .basket-product-card__image {

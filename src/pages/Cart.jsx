@@ -11,7 +11,7 @@ function Cart() {
         <div className="cart_productContainer">
           <BasktetProductCard/>
         </div>
-        <CartSummary/>
+        <CartSummary />
         </div>
       </main>
     )

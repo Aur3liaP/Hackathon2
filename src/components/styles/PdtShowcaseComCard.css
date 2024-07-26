@@ -24,7 +24,9 @@
         .PdtShowcaseComCard__com{
             margin-bottom: 0.25em;
             font-size: 2rem;
-            
+            @media (width <= 1440px) {
+                font-size: 1.55rem;
+            } 
         }
     }
 
