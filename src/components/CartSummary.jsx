@@ -37,6 +37,10 @@ function CartSummary({ items, quantities }) {
     }
   }, [discount, cost])
 
+  const formatNumber = (number) => {
+    return number.toFixed(2)
+  }
+
   return (
     <section className="cartSummary__container">
         <RondSoleilSVG className="homehero__sun-SVG" />
@@ -48,12 +52,12 @@ function CartSummary({ items, quantities }) {
                     <hr className="cartSummary__hr"/>
                         <div className="cartSummary__price">
                             <span className="cartSummary__span">Sous-total</span>
-                            <p className="cartSummary__p">{cost} F</p>
+                            <p className="cartSummary__p">{formatNumber(cost)} F</p>
                         </div>
                         <hr className="cartSummary__hr"/>
                         <div className="cartSummary__price">
                             <span className="cartSummary__span">T.V.A</span>
-                            <p className="cartSummary__p">{TVA} F</p>
+                            <p className="cartSummary__p">{formatNumber(TVA)} F</p>
                         </div>
                     <hr className="cartSummary__hr"/>
                         <div className="cartSummary__code">
@@ -66,13 +70,18 @@ function CartSummary({ items, quantities }) {
                               placeholder="Entrer le code"
                             />
                         </div>
+                        {discount === "3615" && (
+                          <div className="cartSummary__discount">
+                            <p className="cartSummary__discountp">Validé : 3615 -10%</p>
+                          </div>
+                        )}
                 </div>
 
                 <div className="cartSummary__totaltext">
                 <hr className="cartSummary__hr"/>
                     <div className="cartSummary__total">
                         <h2 className="cartSummary__h2">Total</h2>
-                        <p className="cartSummary__p">{cost + TVA - discountAmount} F</p>
+                        <p className="cartSummary__p">{formatNumber(cost + TVA - discountAmount)} F</p>
                     </div>
                 </div>
             </div>

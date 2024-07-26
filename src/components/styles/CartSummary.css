@@ -111,6 +111,10 @@
                 gap: 0.50rem;
             }
 
+            .cartSummary__discountp{
+                font-size: 2rem;
+            }
+
             .cartSummary__p{
                 font-size: 1.25rem;
                 font-family: var(--ff-header);
@@ -135,7 +139,7 @@
         .cartSummary__totaltext{
             @media (width < 640px) {
                 flex-direction: column;
-                padding-right: 1.8rem;
+                padding-right: 1.1rem;
             }
 
             .cartSummary__total{
@@ -157,7 +161,7 @@
                 
                     p{
                         font-weight: 500;
-                        font-size: 1.5rem;
+                        font-size: 1.2rem;
                   
                     }
                 }
