@@ -9,9 +9,10 @@ import DeleteSVG from "./svg/DeleteSVG"
 function BasktetProductCard({
   productTitle = "L'ordinateur",
   productPrice = 899,
+  productImage,
+  quantity = { quantity },
+  setQuantity = { setQuantity },
 }) {
-  const [quantity, setQuantity] = useState(1)
-
   const handleIncrease = () => setQuantity(prevQuantity => prevQuantity + 1)
 
   const handleDecrease = () => {
@@ -22,7 +23,7 @@ function BasktetProductCard({
     <div className="basket-product-card">
       <DeleteSVG className="basket-product-card__delete-icon basket-product-card__button" />
       <div className="basket-product-card__container">
-        <img src={minitel} alt="" className="basket-product-card__image" />
+        <img src={productImage} alt="" className="basket-product-card__image" />
         <div className="basket-product-card__text-container">
           <span className="basket-product-card__product-title">
             {productTitle}

@@ -7,24 +7,39 @@ import Navbar from "../components/Navbar"
 import { ShoppingContext } from "../context/ShoppingContext"
 
 function Cart() {
+  const [quantity, setQuantity] = useState(1)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [filteredItems, setFilteredItems] = useState([])
+
   const { shoppingItems } = useContext(ShoppingContext)
   const items = useLoaderData()
+
+  useEffect(() => {
+    const filteredItems = items.filter(item => shoppingItems.includes(item.id))
+    setFilteredItems(filteredItems)
+    setIsLoaded(true)
+    return
+  }, [])
 
   return (
     <main className="cart">
       <Navbar />
       <div className="cart_container">
-        {items
-          .filter(item => shoppingItems.includes(item.id))
-          .map(item => (
-            <BasktetProductCard
-              key={item.id}
-              productTitle={item.name}
-              productPrice={item.price}
-            />
-          ))}
-
-        <CartSummary />
+        {filteredItems.map(item => (
+          <BasktetProductCard
+            key={item.id}
+            productTitle={item.name}
+            productPrice={item.price}
+            productImage={item.image}
+            quantity={quantity}
+            setQuantity={setQuantity}
+          />
+        ))}
+        {isLoaded ? (
+          <CartSummary items={filteredItems} quantity={quantity} />
+        ) : (
+          <p>loading</p>
+        )}
       </div>
     </main>
   )
