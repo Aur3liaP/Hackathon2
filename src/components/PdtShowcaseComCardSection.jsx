@@ -3,7 +3,7 @@ import PdtShowcaseComCard from "./PdtShowcaseComCard"
 import "./styles/PdtShowcaseComCardSection.css"
 
 function PdtShowcaseComCardSection({ item }) {
-  console.info(item.client_commentary)
+  // console.info(item.client_commentary)
   const commentsArray = Object.values(item.client_commentary)
   return (
     <>
