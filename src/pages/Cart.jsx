@@ -1,12 +1,11 @@
 import PropTypes from "prop-types"
-
 import { useContext, useState, useEffect } from "react"
 import { useLoaderData } from "react-router"
 import BasktetProductCard from "../components/BasketProductCard"
 import CartSummary from "../components/CartSummary"
-import "./styles/Cart.css"
 import Navbar from "../components/Navbar"
 import { ShoppingContext } from "../context/ShoppingContext"
+import "./styles/Cart.css"
 
 function Cart() {
   const [quantities, setQuantities] = useState({})

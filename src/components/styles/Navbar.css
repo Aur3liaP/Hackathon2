@@ -68,6 +68,14 @@
         font-weight: bold;
         font-size: 1.2rem;
       }
+
+      svg{
+        transition: transform 0.2s;
+      }
+
+      svg:active {
+        transform: scale(0.95);
+    }
     }
 
     .navbar__mobile {
