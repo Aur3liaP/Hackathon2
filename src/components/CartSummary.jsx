@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import RondSoleilSVG from "./svg/RondSoleilSVG"
 import "./styles/CartSummary.css"
 import { useMediaQuery } from "react-responsive"
@@ -55,7 +56,11 @@ function CartSummary({ items, quantities }) {
               <hr className="cartSummary__hr" />
               <div className="cartSummary__code">
                 <p className="cartSummary__p"> Code Promo</p>
-                <input type="text" value="taper le code" />
+                <input
+                  type="text"
+                  value={discount}
+                  onChange={() => setDiscount(event.target.value)}
+                />
               </div>
             </div>
 
@@ -119,6 +124,16 @@ function CartSummary({ items, quantities }) {
       )}
     </section>
   )
+}
+
+CartSummary.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+  quantities: PropTypes.objectOf(PropTypes.number).isRequired,
 }
 
 export default CartSummary

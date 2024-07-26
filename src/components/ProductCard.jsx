@@ -1,8 +1,6 @@
 import PropTypes from "prop-types"
 import "./styles/HomeProductCard.css"
 import Button from "./Button"
-import { useContext } from "react"
-import { ShoppingContext } from "../context/ShoppingContext"
 
 function HomeProductCard({ name, price, image, onClick }) {
   return (

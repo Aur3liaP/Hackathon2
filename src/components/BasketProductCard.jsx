@@ -61,6 +61,7 @@ BasktetProductCard.propTypes = {
   productImage: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
   setQuantity: PropTypes.func.isRequired,
+  id: PropTypes.number,
 }
 
 export default BasktetProductCard

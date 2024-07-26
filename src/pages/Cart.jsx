@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import { useContext, useState, useEffect } from "react"
 import { useLoaderData } from "react-router"
 import BasktetProductCard from "../components/BasketProductCard"
@@ -55,6 +57,16 @@ function Cart() {
       </div>
     </main>
   )
+}
+
+CartSummary.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+  quantities: PropTypes.objectOf(PropTypes.number).isRequired,
 }
 
 export default Cart
