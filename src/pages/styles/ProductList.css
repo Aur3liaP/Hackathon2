@@ -10,15 +10,26 @@
     margin: 0 auto;
     /* margin-block: 10vh; */
 
-    .product__list__title {
-      font-size: 3.25rem;
-      font-family: var(--ff-header);
-      margin-bottom: 1em;
-      font-weight: bold;
+    .product__list-title {
+      display: flex;
+      padding: 5vh 0;
+      align-items: center;
+      gap: 9vh;
 
-      @media (width < 450px) {
-        text-align: center;
+      .product__list-h2 {
+        font-size: 3.25rem;
+        font-family: var(--ff-header);
+        /* margin-bottom: 1em; */
+        font-weight: bold;
+
+        @media (width < 450px) {
+          text-align: center;
+        }
       }
+
+      /* .product__list-spirale {
+        transform: scale(-1,1);
+      } */
     }
 
     .product__list__products__wrapper {

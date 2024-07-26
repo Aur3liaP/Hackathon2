@@ -1,3 +1,7 @@
+import { gsap } from "gsap/gsap-core"
+import { useEffect } from "react"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import './styles/HomeTeamCard.css'
 import FleurVerte from './svg/FleurVerte'
 import Ressort from './svg/Ressort';
@@ -20,7 +24,43 @@ const team = [
     { id: 6, name: "Abdou", img: Abdou, description:"Chicken Lord"  },
   ];
 
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
 function HomeTeamCard() {
+
+
+  const flower = elem => {
+    gsap.fromTo(
+      elem,
+      {
+        opacity: 0,
+        x: 800,
+        rotation: 0
+      },
+      {
+        opacity: 1,
+        x: 0,
+        rotation: -540,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: elem,
+          start: "top 90%",
+          // end: "bottom center",
+          // scrub: true,
+          // markers: true,
+          // id: "flower",
+        },
+      },
+    )
+  }
+
+
+  useEffect(() => {
+    flower(".teamCard__fleur");
+  }, []);
+
+
 
     return (
     <section className='teamCard'>

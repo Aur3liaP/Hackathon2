@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import "./styles/ProductListProductCard.css"
 import Button from "./Button"
 
@@ -18,6 +19,17 @@ function ProductListProductCard({ item }) {
       </div>
     </div>
   )
+}
+
+ProductListProductCard.propTypes = {
+  item: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]).isRequired
+  }).isRequired
 }
 
 export default ProductListProductCard
