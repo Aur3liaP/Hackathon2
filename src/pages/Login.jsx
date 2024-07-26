@@ -19,9 +19,9 @@ function Login() {
     ) {
       setUsername(usernameTest)
       setPassword(passwordTest)
-      alert("hey")
+      alert("Bienvenue Lorys")
     } else {
-      alert("woyoy")
+      alert("Nom d'utilisateur ou mot de passe erroné")
     }
   }
 
@@ -46,7 +46,7 @@ function Login() {
               onChange={e => setPasswordTest(e.target.value)}
             />
             <button
-              className="login-button"
+              className="butlog"
               type="button"
               onClick={e => handleLogin(e)}
             >
