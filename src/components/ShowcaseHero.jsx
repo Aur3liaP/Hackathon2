@@ -18,11 +18,7 @@ export default function ShowcaseHero({ item }) {
     query: "(max-width: 640px)",
   })
 
-  const { shoppingItems, addToCart } = useContext(ShoppingContext)
-
-  useEffect(() => {
-    console.table(shoppingItems)
-  }, [shoppingItems])
+  const { addToCart } = useContext(ShoppingContext)
 
   return (
     <section className="showcase__hero__container">
@@ -98,16 +94,18 @@ export default function ShowcaseHero({ item }) {
                 {item.description} <br />
                 {item.sales_pitch}
               </p>
-              <Link to={"/cart"}>
-                <button className="showcase__hero__grid__right__buy">
-                  <span className="showcase__hero__grid__right__buy__text">
-                    Acheter
-                  </span>
-                  <span className="showcase__hero__grid__right__buy__prix">
-                    {item.price}F
-                  </span>
-                </button>
-              </Link>
+
+              <button
+                onClick={() => addToCart(item.id)}
+                className="showcase__hero__grid__right__buy"
+              >
+                <span className="showcase__hero__grid__right__buy__text">
+                  Acheter
+                </span>
+                <span className="showcase__hero__grid__right__buy__prix">
+                  {item.price}F
+                </span>
+              </button>
             </div>
           </section>
         </div>

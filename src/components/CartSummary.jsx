@@ -31,7 +31,7 @@ function CartSummary({ items, quantities }) {
 
   useEffect(() => {
     if (discount === "3615") {
-      setDiscountAmount((cost * 10) / 100)
+      setDiscountAmount(Math.round((cost * 10) / 100))
     } else {
       setDiscountAmount(0)
     }
@@ -43,7 +43,7 @@ function CartSummary({ items, quantities }) {
 
   return (
     <section className="cartSummary__container">
-        <RondSoleilSVG className="homehero__sun-SVG" />
+      <RondSoleilSVG className="homehero__sun-SVG" />
 
         <div className="cartSummary">
             <div className="cartSummary__text">
@@ -88,8 +88,8 @@ function CartSummary({ items, quantities }) {
             <div className="cartSummary__order">
                 <a href="https://buy.stripe.com/test_7sI28W5RQdl5crSdQR" target="blank">Commander</a>
             </div>
-        </div>
-      </section>
+      </div>
+    </section>
   )
 }
 

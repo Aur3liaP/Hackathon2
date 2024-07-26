@@ -1,6 +1,29 @@
 import PropTypes from "prop-types"
-
+import { gsap } from "gsap"
+import { useEffect } from "react"
 function RondSoleilSVG({ width = "136", height = "136", className }) {
+
+  const sun = elem => {
+    gsap.fromTo(
+      elem,
+      {
+        opacity: 1,
+        
+        rotation: 0
+      },
+      {
+        opacity: 1,
+       
+        rotation: -360,
+        duration: 1,
+      },
+    )
+  }
+  
+  useEffect(() => {
+    sun(".homehero__sun-SVG")
+  }, [])
+  
   return (
     <svg
       className={className}

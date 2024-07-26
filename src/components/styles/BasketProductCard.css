@@ -21,7 +21,7 @@
     gap: 3rem;
 
     @media (max-width: 640px) {
-      gap: 2rem
+      gap: 2rem;
     }
   }
 
@@ -31,14 +31,14 @@
   }
 
   .basket-product-card__button:active {
-      transform: scale(0.90);
+    transform: scale(0.9);
   }
 
   .basket-product-card__image {
     max-width: 100px;
   }
 
-  .basket-product-card__text-container{
+  .basket-product-card__text-container {
     width: 45%;
   }
 
@@ -46,11 +46,10 @@
     font-size: 1.5rem;
   }
 
-  .basket-product-card__price-container{
+  .basket-product-card__price-container {
     display: flex;
-      align-items: center;
-      justify-content: space-between;
-
+    align-items: center;
+    justify-content: space-between;
   }
 
   .basket-product-card__quantity {

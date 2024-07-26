@@ -2,10 +2,35 @@ import RondSoleilSVG from "./svg/RondSoleilSVG"
 import DoublePlaySVG from "./svg/DoublePlaySVG"
 import SquigglyArrow from "./svg/SquigglyArrow"
 import "./styles/HomeHero.css"
+import { gsap } from "gsap"
 import minitel from "../assets/minitel2API.png"
 import Button from "./Button"
+import { useEffect } from "react"
+
+
 
 function HomeHero() {
+
+  const animateArrow = elem => {
+    gsap.fromTo(
+      elem,
+      {
+        opacity: 0,
+        x: -200,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      },
+    )
+  }
+
+  useEffect(() => {
+    animateArrow(".doubleplay-arrow1")
+  }, [])
+
+
   return (
     <section className="homehero">
       <div className="homehero__container">
