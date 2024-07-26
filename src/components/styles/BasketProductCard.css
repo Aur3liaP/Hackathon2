@@ -6,7 +6,7 @@
   padding: 0.5rem;
 
   width: 35%;
-  min-width: 300px;
+  min-width: 23rem;
   display: flex;
   flex-direction: column;
 
@@ -18,7 +18,7 @@
   .basket-product-card__container {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
 
     @media (max-width: 640px) {
       gap: 2rem
