@@ -44,6 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+        loader: () => getData(`http://localhost:3310/users`),
       },
     ],
   },

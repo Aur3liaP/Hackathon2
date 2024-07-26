@@ -7,11 +7,14 @@ import { Outlet } from "react-router-dom"
 import "./styles/App.css"
 // import Navbar from "./Navbar"
 import Footer from "./Footer"
+import { UserContextProvider } from "../context/UserContext"
 
 function App() {
   return (
     <>
-      <Outlet />
+      <UserContextProvider>
+        <Outlet />
+      </UserContextProvider>
       <Footer />
     </>
   )
