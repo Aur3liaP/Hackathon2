@@ -6,6 +6,8 @@ import RondSoleilSVG from "./svg/RondSoleilSVG"
 import { useMediaQuery } from "react-responsive"
 import { Link } from "react-router-dom"
 import { PropTypes } from "prop-types"
+import { useContext, useEffect } from "react"
+import { ShoppingContext } from "../context/ShoppingContext"
 
 export default function ShowcaseHero({ item }) {
   const isDesktop = useMediaQuery({
@@ -16,7 +18,11 @@ export default function ShowcaseHero({ item }) {
     query: "(max-width: 640px)",
   })
 
-  // console.info(item)
+  const { shoppingItems, addToCart } = useContext(ShoppingContext)
+
+  useEffect(() => {
+    console.table(shoppingItems)
+  }, [shoppingItems])
 
   return (
     <section className="showcase__hero__container">
@@ -48,16 +54,18 @@ export default function ShowcaseHero({ item }) {
                 {item.description} <br />
                 {item.sales_pitch}
               </p>
-              <Link to={"/cart"}>
-                <button className="showcase__hero__grid__right__buy">
-                  <span className="showcase__hero__grid__right__buy__text">
-                    Acheter
-                  </span>
-                  <span className="showcase__hero__grid__right__buy__prix">
-                    {item.price}F
-                  </span>
-                </button>
-              </Link>
+
+              <button
+                onClick={() => addToCart(item.id)}
+                className="showcase__hero__grid__right__buy"
+              >
+                <span className="showcase__hero__grid__right__buy__text">
+                  Acheter
+                </span>
+                <span className="showcase__hero__grid__right__buy__prix">
+                  {item.price}F
+                </span>
+              </button>
             </div>
           </section>
         </div>
@@ -113,6 +121,7 @@ ShowcaseHero.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
     sales_pitch: PropTypes.string.isRequired,
   }).isRequired,

@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom"
-import "./styles/Navbar.css"
+import { useMediaQuery } from "react-responsive"
+import { useState, useContext } from "react"
+import { UserContext } from "../context/UserContext"
 import HomeLogoSvg from "./svg/HomeLogoSvg"
 import BasketLogoSvg from "./svg/BasketLogoSvg"
 import MenuBurgerSvg from "./svg/MenuBurgerSvg"
-import { useMediaQuery } from "react-responsive"
-import { useState } from "react"
+import "./styles/Navbar.css"
 
 export default function Navbar() {
+  const { username } = useContext(UserContext)
   const [displayBurger, setDisplayBurger] = useState(false)
 
   const isDesktopOrLaptop = useMediaQuery({
@@ -36,9 +38,13 @@ export default function Navbar() {
               <Link to="/products">
                 <span>Nos Produits</span>
               </Link>
-              <Link to="/cart">
-                <span>Panier</span>
-              </Link>
+              {username ? (
+                <span>{username}</span>
+              ) : (
+                <Link to="/login">
+                  <span>Se Connecter</span>
+                </Link>
+              )}
             </section>
           </section>
 
@@ -48,7 +54,7 @@ export default function Navbar() {
                 <span className="navbar__right__link">PANIER</span>
               </Link>
               <Link to="/cart">
-                <BasketLogoSvg width="50" height="50" />
+                <BasketLogoSvg width="50" height="50"/>
               </Link>
             </div>
           </section>
@@ -81,11 +87,18 @@ export default function Navbar() {
               <span>Accueil</span>
             </Link>
             <a href="/#Team1">
-                <span>L&apos;équipe</span>
-              </a>
+              <span>L&apos;équipe</span>
+            </a>
             <Link to="/products">
               <span>Nos Produits</span>
             </Link>
+            {username ? (
+              <span>{username}</span>
+            ) : (
+              <Link to="/login">
+                <span>Se Connecter</span>
+              </Link>
+            )}
             <Link to="/cart">
               <span>Panier</span>
             </Link>

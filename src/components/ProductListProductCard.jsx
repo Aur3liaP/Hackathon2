@@ -2,9 +2,9 @@ import PropTypes from "prop-types"
 import "./styles/ProductListProductCard.css"
 import Button from "./Button"
 
-function ProductListProductCard({ item }) {
+function ProductListProductCard({ item, onClick }) {
   return (
-    <div className="card__container">
+    <div className="card__container" onClick={onClick}>
       <div className="card">
         <div className="card__image">
           <img src={item.image} alt="" />

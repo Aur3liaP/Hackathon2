@@ -3,7 +3,7 @@ import PdtShowcaseComCard from "./PdtShowcaseComCard"
 import "./styles/PdtShowcaseComCardSection.css"
 
 function PdtShowcaseComCardSection({ item }) {
-  console.info(item.client_commentary)
+  // console.info(item.client_commentary)
   const commentsArray = Object.values(item.client_commentary)
   return (
     <>
@@ -11,9 +11,9 @@ function PdtShowcaseComCardSection({ item }) {
         <div className="pdtShowcaseComCardSection__container">
           <h2 className="pdtShowcaseComCardSection__title">Ils en parlent !</h2>
           <div className="pdtShowcaseComCardSection__list">
-            {commentsArray.map((comment, index) => (
+            {commentsArray.map((comment, client_name) => (
               <PdtShowcaseComCard
-                key={index}
+                key={client_name}
                 client_name={comment.client_name}
                 commentary={comment.commentary}
               />
@@ -27,13 +27,11 @@ function PdtShowcaseComCardSection({ item }) {
 
 PdtShowcaseComCardSection.propTypes = {
   item: PropTypes.shape({
-    client_commentary: PropTypes.objectOf(
-      PropTypes.shape({
-        client_name: PropTypes.string.isRequired,
-        commentary: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
+      client_commentary: PropTypes.oneOfType([
+          PropTypes.object,
+          PropTypes.array
+      ]).isRequired,
   }).isRequired,
-}
+};
 
 export default PdtShowcaseComCardSection

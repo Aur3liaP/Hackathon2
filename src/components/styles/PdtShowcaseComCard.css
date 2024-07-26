@@ -24,11 +24,28 @@
         .PdtShowcaseComCard__com{
             margin-bottom: 0.25em;
             font-size: 2rem;
-            
+            @media (width <= 1440px) {
+                font-size: 1.55rem;
+            } 
         }
     }
 
     .PdtShowcaseComCard__img{
-        max-width: 40%;
+        width: 10vw; 
+        aspect-ratio: 1 / 1; 
+        object-fit: cover; 
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .PdtShowcaseComCard__container{
+        .PdtShowcaseComCard__info{
+            .PdtShowcaseComCard__com{
+                font-size: 1.5rem;
+            }
+        }
+        .PdtShowcaseComCard__img{
+            width: 80px;
+        }
     }
 }

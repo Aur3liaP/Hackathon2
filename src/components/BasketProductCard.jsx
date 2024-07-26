@@ -1,28 +1,34 @@
-import { useState } from "react"
 import PropTypes from "prop-types"
 import "./styles/BasketProductCard.css"
-import minitel from "../assets/minitel2API.png"
+import { ShoppingContext } from "../context/ShoppingContext"
 import MinusSVG from "./svg/MinusSVG"
 import PlusSVG from "./svg/PlusSVG"
 import DeleteSVG from "./svg/DeleteSVG"
+import { useContext } from "react"
 
 function BasktetProductCard({
   productTitle = "L'ordinateur",
   productPrice = 899,
+  productImage,
+  quantity,
+  setQuantity,
+  id,
 }) {
-  const [quantity, setQuantity] = useState(1)
-
-  const handleIncrease = () => setQuantity(prevQuantity => prevQuantity + 1)
+  const { removeFromCart } = useContext(ShoppingContext)
+  const handleIncrease = () => setQuantity(quantity + 1)
 
   const handleDecrease = () => {
-    setQuantity(prevQuantity => (prevQuantity > 0 ? prevQuantity - 1 : 0))
+    setQuantity(quantity > 1 ? quantity - 1 : 1)
   }
 
   return (
     <div className="basket-product-card">
-      <DeleteSVG className="basket-product-card__delete-icon basket-product-card__button" />
+      <DeleteSVG
+        className="basket-product-card__delete-icon basket-product-card__button"
+        onClick={() => removeFromCart(id)}
+      />
       <div className="basket-product-card__container">
-        <img src={minitel} alt="" className="basket-product-card__image" />
+        <img src={productImage} alt="" className="basket-product-card__image" />
         <div className="basket-product-card__text-container">
           <span className="basket-product-card__product-title">
             {productTitle}
@@ -52,6 +58,10 @@ function BasktetProductCard({
 BasktetProductCard.propTypes = {
   productTitle: PropTypes.string,
   productPrice: PropTypes.number,
+  productImage: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
+  setQuantity: PropTypes.func.isRequired,
+  id: PropTypes.number,
 }
 
 export default BasktetProductCard
