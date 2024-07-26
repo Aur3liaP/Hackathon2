@@ -1,0 +1,33 @@
+.product__list__container {
+  background-color: #ffd0e6;
+  width: 100%;
+  height: auto;
+
+  .product__list {
+    padding-block: 5vh;
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    /* margin-block: 10vh; */
+
+    .product__list__title {
+      font-size: 3.25rem;
+      font-family: var(--ff-header);
+      margin-bottom: 1em;
+      font-weight: bold;
+
+      @media (width < 450px) {
+        text-align: center;
+      }
+    }
+
+    .product__list__products__wrapper {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5rem;
+      justify-content: center;
+      padding-bottom: 5rem;
+    }
+  }
+}
