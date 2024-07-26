@@ -18,7 +18,7 @@ function ProductList() {
       {
         opacity: 0,
         x: 800,
-        rotation: 0
+        rotation: 0,
       },
       {
         opacity: 1,
@@ -33,7 +33,7 @@ function ProductList() {
     spiral(".product__list-spirale")
   }, [])
 
-  const handleCardClick = (id) => {
+  const handleCardClick = id => {
     window.scrollTo(0, 0)
     navigate(`/product-showcase/${id}`)
   }
@@ -43,14 +43,23 @@ function ProductList() {
       <div className="product__list__container">
         <Navbar />
         <div className="product__list">
-          <h2 className="product__list__title">Nos dernières trouvailles!</h2>
-          
-            <div className="product__list__products__wrapper">
-              {items.map(item => (
-                <ProductListProductCard key={item.id} item={item} onClick={() => handleCardClick(item.id)}/>
-              ))}
-            </div>
-          
+          <div className="product__list-title">
+            <h2 className="product__list-h2">Nos dernières trouvailles!</h2>
+            <Spirale
+              width={110}
+              height={110}
+              className="product__list-spirale"
+            />
+          </div>
+          <div className="product__list__products__wrapper">
+            {items.map(item => (
+              <ProductListProductCard
+                key={item.id}
+                item={item}
+                onClick={() => handleCardClick(item.id)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>
