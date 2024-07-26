@@ -31,7 +31,7 @@ function CartSummary({ items, quantities }) {
 
   useEffect(() => {
     if (discount === "3615") {
-      setDiscountAmount((cost * 10) / 100)
+      setDiscountAmount(Math.round((cost * 10) / 100))
     } else {
       setDiscountAmount(0)
     }
@@ -39,48 +39,53 @@ function CartSummary({ items, quantities }) {
 
   return (
     <section className="cartSummary__container">
-        <RondSoleilSVG className="homehero__sun-SVG" />
+      <RondSoleilSVG className="homehero__sun-SVG" />
 
-        <div className="cartSummary">
-            <div className="cartSummary__text">
-                <div className="cartSummary__prices">
-                    <h2 className="cartSummary__h2">Prix</h2>
-                    <hr className="cartSummary__hr"/>
-                        <div className="cartSummary__price">
-                            <span className="cartSummary__span">Sous-total</span>
-                            <p className="cartSummary__p">{cost} F</p>
-                        </div>
-                        <hr className="cartSummary__hr"/>
-                        <div className="cartSummary__price">
-                            <span className="cartSummary__span">T.V.A</span>
-                            <p className="cartSummary__p">{TVA} F</p>
-                        </div>
-                    <hr className="cartSummary__hr"/>
-                        <div className="cartSummary__code">
-                            <p className="cartSummary__p"> Code Promo</p>
-                            <input
-                              id="code"
-                              type="text"
-                              value={discount}
-                              onChange={(event) => setDiscount(event.target.value)}
-                              placeholder="Entrer le code"
-                            />
-                        </div>
-                </div>
+      <div className="cartSummary">
+        <div className="cartSummary__text">
+          <div className="cartSummary__prices">
+            <h2 className="cartSummary__h2">Prix</h2>
+            <hr className="cartSummary__hr" />
+            <div className="cartSummary__price">
+              <span className="cartSummary__span">Sous-total</span>
+              <p className="cartSummary__p">{cost} F</p>
+            </div>
+            <hr className="cartSummary__hr" />
+            <div className="cartSummary__price">
+              <span className="cartSummary__span">T.V.A</span>
+              <p className="cartSummary__p">{TVA} F</p>
+            </div>
+            <hr className="cartSummary__hr" />
+            <div className="cartSummary__code">
+              <p className="cartSummary__p"> Code Promo</p>
+              <input
+                id="code"
+                type="text"
+                value={discount}
+                onChange={event => setDiscount(event.target.value)}
+                placeholder="Entrer le code"
+              />
+            </div>
+          </div>
 
-                <div className="cartSummary__totaltext">
-                <hr className="cartSummary__hr"/>
-                    <div className="cartSummary__total">
-                        <h2 className="cartSummary__h2">Total</h2>
-                        <p className="cartSummary__p">{cost + TVA - discountAmount} F</p>
-                    </div>
-                </div>
+          <div className="cartSummary__totaltext">
+            <hr className="cartSummary__hr" />
+            <div className="cartSummary__total">
+              <h2 className="cartSummary__h2">Total</h2>
+              <p className="cartSummary__p">{cost + TVA - discountAmount} F</p>
             </div>
-            <div className="cartSummary__order">
-                <a href="https://buy.stripe.com/test_7sI28W5RQdl5crSdQR" target="blank">Commander</a>
-            </div>
+          </div>
         </div>
-      </section>
+        <div className="cartSummary__order">
+          <a
+            href="https://buy.stripe.com/test_7sI28W5RQdl5crSdQR"
+            target="blank"
+          >
+            Commander
+          </a>
+        </div>
+      </div>
+    </section>
   )
 }
 
