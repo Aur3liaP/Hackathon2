@@ -8,7 +8,7 @@ function HomeProductSection() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("http://localhost:3310/items")
+    fetch("https://cybermart-api.netlify.app/items")
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error("Error fetching data:", error))
