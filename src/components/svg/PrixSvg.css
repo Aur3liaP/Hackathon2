@@ -1,0 +1,7 @@
+.price__svg__container {
+  position: relative;
+
+  svg {
+    position: absolute;
+  }
+}

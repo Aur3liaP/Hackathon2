@@ -1,0 +1,51 @@
+.PdtShowcaseComCard__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid black;
+  box-shadow: black 4px 6px 0px;
+
+  .PdtShowcaseComCard__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+
+    .PdtShowcaseComCard__title {
+      padding: 1.5rem;
+      margin-bottom: 0.25em;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .PdtShowcaseComCard__com {
+      margin-bottom: 0.25em;
+      font-size: 2rem;
+      @media (width <= 1440px) {
+        font-size: 1.55rem;
+      }
+    }
+  }
+
+  .PdtShowcaseComCard__img {
+    width: 10vw;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .PdtShowcaseComCard__container {
+    .PdtShowcaseComCard__info {
+      .PdtShowcaseComCard__com {
+        font-size: 1.5rem;
+      }
+    }
+    .PdtShowcaseComCard__img {
+      width: 80px;
+    }
+  }
+}

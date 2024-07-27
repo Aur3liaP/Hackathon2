@@ -1,0 +1,27 @@
+.cart{
+    background-color: var(--clr-pink);
+    overflow: hidden;
+
+.cart_container{
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-block: 2.5rem;
+    gap: 2rem;
+
+    @media (width < 640px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .cart_productContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+}
