@@ -24,23 +24,23 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <ProductList />,
-        loader: () => getData("http://localhost:3310/items"),
+        loader: () => getData("https://cybermart-api.netlify.app/items"),
       },
       {
         path: "/product-showcase/:id",
         element: <PageShowcase />,
         loader: ({ params }) =>
-          getData(`http://localhost:3310/items/${params.id}`),
+          getData(`https://cybermart-api.netlify.app/items/${params.id}`),
       },
       {
         path: "/cart",
         element: <Cart />,
-        loader: () => getData("http://localhost:3310/items"),
+        loader: () => getData("https://cybermart-api.netlify.app/items"),
       },
       {
         path: "/login",
         element: <Login />,
-        loader: () => getData(`http://localhost:3310/users`),
+        loader: () => getData(`https://cybermart-api.netlify.app/users`),
       },
     ],
   },
